@@ -1,0 +1,8 @@
+.projects{
+    margin-top: 40px;
+    width: 98%;
+}
+.active-link {
+    font-weight: bold; /* Example: Make the text bold for active links */
+   color: blue;
+   }

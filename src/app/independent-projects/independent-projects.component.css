@@ -1,0 +1,13 @@
+.content{
+  position: relative;
+  width: 90;
+  align-content: center;
+}
+.even-row {
+  background-color: #c1cce0; 
+}
+
+.odd-row {
+  background-color: #d8e4dd;
+}
+

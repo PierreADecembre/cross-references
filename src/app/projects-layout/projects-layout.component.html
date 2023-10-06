@@ -1,0 +1,13 @@
+
+  <nav mat-tab-nav-bar ngClass="tabs" color="primary" [tabPanel]="tabPanel">
+    <a mat-tab-link routerLink="/cross-dependency-projects" routerLinkActive="active-link">With Cross Dependency Projects</a>
+    <a mat-tab-link routerLink="/independent-projects" routerLinkActive="active-link">Independent Projects</a>
+  </nav>  
+  
+
+<div class="projects">	
+  <mat-tab-nav-panel #tabPanel>
+    <router-outlet></router-outlet>
+  </mat-tab-nav-panel>
+</div> 
+

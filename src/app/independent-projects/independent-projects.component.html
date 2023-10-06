@@ -1,0 +1,41 @@
+
+<div class="content">
+  <mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element;"> {{ element.solution.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="path">
+      <mat-header-cell *matHeaderCellDef> Path </mat-header-cell>
+      <mat-cell *matCellDef="let element;"> {{ element.solution.path }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="references">
+      <mat-header-cell *matHeaderCellDef> References </mat-header-cell>
+      <mat-cell *matCellDef="let element;"> 
+        <mat-list>
+          <mat-list-item *ngFor="let reference of element.references">
+            <div matLine>{{ reference.name }}</div>
+            <div matLine>{{ reference.path }}</div>
+          </mat-list-item>
+        </mat-list>
+
+      </mat-cell>
+    </ng-container>
+
+    <!-- Header row -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <!-- Row data -->
+    <mat-row *matRowDef="let row; columns: displayedColumns; let i = index"
+    [class.even-row]="i % 2 === 0"
+    [class.odd-row]="i % 2 !== 0">></mat-row>
+
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons></mat-paginator>
+
+
+
+</div>
